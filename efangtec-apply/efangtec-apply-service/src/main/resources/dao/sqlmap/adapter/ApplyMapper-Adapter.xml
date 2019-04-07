@@ -1,0 +1,17 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.efangtec.apply.mapper.adapter.ApplyMapperAdapter">
+    <resultMap id="BaseResultMap" type="com.efangtec.apply.vo.ApplyInfoVo"
+               extends="com.efangtec.apply.mapper.ApplyMapper.BaseResultMap">
+        <result column="parent_name" property="parentName"/>
+    </resultMap>
+
+    <select id="delete" resultMap="BaseResultMap">
+      SELECT *,"parent" as parent_name FROM test WHERE id = #{id} limit 1;
+   </select>
+    <select id="getTestVoById" resultMap="BaseResultMap">
+        <include refid="com.efangtec.apply.mapper.ApplyMapper.applyAll"/>
+        SELECT *,"parent" as parent_name FROM test WHERE id = #{id} limit 1;
+    </select>
+
+</mapper>

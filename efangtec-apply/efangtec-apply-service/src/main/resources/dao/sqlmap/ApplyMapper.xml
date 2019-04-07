@@ -1,0 +1,18 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.efangtec.apply.mapper.ApplyMapper">
+   <resultMap id="BaseResultMap" type="com.efangtec.pojo.ApplyInfo">
+      <result column="id" property="id"/>
+      <result column="name" property="name"/>
+   </resultMap>
+    <sql id="applyAll">a,b,c</sql>
+
+    <select id="add" resultMap="BaseResultMap">
+      SELECT * FROM test WHERE id = #{id} limit 1;
+   </select>
+
+    <insert id="create">
+        INSERT INTO Test (id,name) VALUES (#{id},#{name})
+    </insert>
+   
+</mapper>

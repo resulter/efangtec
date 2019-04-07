@@ -1,0 +1,54 @@
+spring:
+  http:
+    multipart:
+      enabled: true
+      max-file-size: 100MB
+      max-request-size: 100MB
+  application:
+    name: jmkx-service
+  profiles:
+    active: dev
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://106.75.29.110:43306/efangtec_rwd?allowMultiQueries=true&useAffectedRows=true
+    username: rwd
+    password: rwd
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch
+      cluster-nodes: 192.168.8.26:9200
+      repositories:
+        enabled: true #仓库中存储数据
+  cache:
+    type: CAFFEINE
+  cache-names:
+  - getPersonById
+  - name2
+  caffeine:
+    spec: maximumSize=500,expireAfterWrite=5s
+server:
+  port: 6601
+
+logging:
+  config: classpath:logback-spring.xml
+
+mybatis:
+  type-aliases-package: org.snaker.engine.entity
+  mapper-locations: classpath*:mapper/*.xml,classpath*:dao/sqlmap/**/*.xml
+
+#  classpath*:com/znxk/basic/**/dao/mapping/*.xml /mapper/*.xml classpath*:dao/sqlmap/**/*.xml
+#自定义属性
+efangtec:
+  #  MQ账号
+  mqUsername: admin
+  #  QM密码
+  mqPassword: admin
+  #  MQ地址
+  mqUrl: tcp://localhost:61616
+  #开发环境
+  imgurl: http://resulter.easy.echosite.cn/
+  fsPath: d:/var/
+  downloadExcelPath: d:/excel.xlsx
+  sendMessageUrl: http://api.chanzor.com/send
+  chanzorCount: yifangkeji1-yx
+  chanzorPassword: 88510636
