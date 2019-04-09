@@ -5,6 +5,11 @@ package com.efangtec.common.pojo;
  *
  */
 public final class Constants {
+
+    public static String DRUGS_START_STR = "ef-";
+
+
+
     //删除标志：已删除
     public static int DELETE_YES = -1;
     //删除标志：未删除

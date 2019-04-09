@@ -7,6 +7,6 @@ import org.springframework.stereotype.Service;
 public class ApplyServiceImpl implements ApplyService {
     @Override
     public void add() {
-
+        System.out.println("调用申请通用方法");
     }
 }

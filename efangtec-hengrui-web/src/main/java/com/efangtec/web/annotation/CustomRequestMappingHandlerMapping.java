@@ -12,14 +12,14 @@ public class CustomRequestMappingHandlerMapping extends RequestMappingHandlerMap
 
     @Override
     protected RequestCondition<?> getCustomTypeCondition(Class<?> handlerType) {
-        // 扫描类上的 @ApiVersion
+        // 扫描类上的 @drugsType
         DrugsType drugsType = AnnotationUtils.findAnnotation(handlerType, DrugsType.class);
         return createRequestCondition(drugsType);
     }
 
     @Override
     protected RequestCondition<?> getCustomMethodCondition(Method method) {
-        // 扫描方法上的 @ApiVersion
+        // 扫描方法上的 @drugsType
         DrugsType drugsType = AnnotationUtils.findAnnotation(method, DrugsType.class);
         return createRequestCondition(drugsType);
     }

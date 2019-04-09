@@ -18,7 +18,7 @@ public class HengRuiApplyServiceImpl  extends HengRuiApplyService {
 
     @Override
     public void delete() {
-        System.out.println("调用恒瑞方法" + HengRuiApplyServiceImpl.class);
+        System.out.println("调用恒瑞申请方法" + HengRuiApplyServiceImpl.class);
     }
 
 

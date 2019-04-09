@@ -1,6 +1,6 @@
 package com.efangtec;
 
-import com.efangtec.web.manager.TestManager;
+import com.efangtec.web.manager.ApplyManager;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HengruiWebApplicationTests {
 
     @Autowired
-    TestManager testManager;
+    ApplyManager testManager;
     @Test
     @RequestMapping("/test")
     public void test(){
-        testManager.test();
+
     }
 
     @Test
