@@ -16,7 +16,7 @@ public class ApplyController {
 
 
 
-    @RequestMapping("/delete")
+    @RequestMapping("/apply")
     @DrugsType(type = "ef-ni")
     public Result test1(String key){
         Result result = applyManager.test1();
@@ -24,7 +24,7 @@ public class ApplyController {
     }
 
 
-    @RequestMapping("/delete")
+    @RequestMapping("/apply")
     @DrugsType(type = "ef-ai")
     public Result test2(String key){
         Result result = applyManager.test2();
